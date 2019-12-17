@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "52c959f6f7f8fd60a2f5a0609e86a579",
+    "revision": "47209ad95904542ce37673d30665c531",
     "url": "/roam-chessboard/index.html"
   },
   {
-    "revision": "4cc60768a53a5fe73ac8",
-    "url": "/roam-chessboard/static/css/main.7a427453.chunk.css"
+    "revision": "2434b7f6d2fac097d69c",
+    "url": "/roam-chessboard/static/css/main.f00d3860.chunk.css"
   },
   {
-    "revision": "1ed065644bdef3d84099",
-    "url": "/roam-chessboard/static/js/2.029493da.chunk.js"
+    "revision": "d0826ba23a7e05413401",
+    "url": "/roam-chessboard/static/js/2.e92040c7.chunk.js"
   },
   {
     "revision": "d705cb622423d72c5defbf368ca70dcc",
-    "url": "/roam-chessboard/static/js/2.029493da.chunk.js.LICENSE"
+    "url": "/roam-chessboard/static/js/2.e92040c7.chunk.js.LICENSE"
   },
   {
-    "revision": "4cc60768a53a5fe73ac8",
-    "url": "/roam-chessboard/static/js/main.f626bbf5.chunk.js"
+    "revision": "2434b7f6d2fac097d69c",
+    "url": "/roam-chessboard/static/js/main.68e2b9ea.chunk.js"
   },
   {
     "revision": "4cbd233cacdeb8e41439",

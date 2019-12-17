@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/roam-chessboard/precache-manifest.f05a58c71e2b71efe171e1027d408f61.js"
+  "/roam-chessboard/precache-manifest.cbd3f07613c15431763e59c2ca1f3a12.js"
 );
 
 self.addEventListener('message', (event) => {
