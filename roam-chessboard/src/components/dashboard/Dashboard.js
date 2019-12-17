@@ -58,7 +58,7 @@ class Dashboard extends Component {
         }
     }
 
-    changeGrid = async () => {
+    changeGrid = ()=> {
         var count = 0;
         var temp = [];
         var temp2 = [];
@@ -80,11 +80,11 @@ class Dashboard extends Component {
     }
 
     handleChange(e) {
-        this.setState({ gridInput: e.target.value });
+        this.setState({ gridInput: e.target.value,outputArray: [] });
     }
 
     _submit = () => {
-        this.setState({ n: parseInt(this.state.gridInput), outputArray: [] })
+        this.setState({outputArray: [], i:0,j:0, n: parseInt(this.state.gridInput),  })
         this.changeGrid()
     }
 
@@ -120,12 +120,6 @@ class Dashboard extends Component {
                                             key={index}
                                             className='boxGrid'
                                             style={{
-                                                // display: 'flex', flexDirection: 'row',
-                                                // alignItems: 'center', justifyContent: 'center',
-                                                // width: '70px', height: '70px', borderColor: '#C6C6C6',
-                                                // border: '1px', borderStyle: 'solid', borderCollapse: 'collapse',
-                                                // margin: '1px',// borderBlockColor: '#C6C6C6', //margin: '1px',
-
                                                 backgroundColor: data.selectedBox === true ? 'yellow' : '#FFFFFF'
                                             }}
                                         >
