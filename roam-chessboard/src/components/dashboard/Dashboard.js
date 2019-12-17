@@ -104,8 +104,12 @@ class Dashboard extends Component {
     }
 
     _submit = async () => {
-        await this.setState({ outputArray: [], i: 0, j: 0, n: parseInt(this.state.gridInput), })
+        await window.addEventListener('keydown', this.checkKey)
+        await this.setState({ outputArray: [], i: 0, j: 0, n: parseInt(this.state.gridInput),stepsCount:0 })
         await this.changeGrid()
+    }
+    _reset=()=>{
+        window.location.reload()
     }
 
     render() {
@@ -159,7 +163,12 @@ class Dashboard extends Component {
                     ?
                     (
                         window.removeEventListener('keydown', this.checkKey),
-                        <text>OUTPUT: {JSON.stringify(this.state.outputArray)}</text>)
+                        <div>
+                            <text>OUTPUT: {JSON.stringify(this.state.outputArray)}</text>
+                            <button onClick={this._reset} className='submitBtn' >RESET</button>
+                        </div>
+
+                    )
                     :
                     null
                 }
