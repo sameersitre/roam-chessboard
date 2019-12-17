@@ -3,62 +3,78 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            n: 0,
-            m: 20,
-            gridInput: 3,
+            n: 5,
+            m: 8,
+            gridInput: 5,
             arrayObject: [],
             selectedBox: 3,
             i: 0, j: 0,
-            outputArray: []
+            outputArray: [[0, 0]],
+            stepsCount: 0
         }
-        this.handleChange = this.handleChange.bind(this);
+        this._NChange = this._NChange.bind(this);
+        this._MChange = this._MChange.bind(this);
     }
+
     componentDidMount() {
-        // this.changeGrid()
+        this.changeGrid()
         window.addEventListener('keydown', this.checkKey)
     }
-    checkKey = (e) => {
-        e = e || window.event;
 
+    checkKey = (e) => {
+        const { n, i, j, stepsCount } = this.state
+        e = e || window.event;
         if (e.keyCode == '37') {
-            console.log('left');
-            var OParray = this.state.outputArray;
-            var change = this.state.j - 1
-            OParray.push([this.state.i, change])
-            this.setState({ outputArray: OParray })
-            this.setState({ j: change })
-            this.changeGrid()
+            if (j - 1 >= 0) {
+                console.log('left');
+                var OParray = this.state.outputArray;
+                var change = this.state.j - 1
+                OParray.push([this.state.i, change])
+                this.setState({ outputArray: OParray, j: change, stepsCount: stepsCount + 1 })
+                // this.setState({ j: change })
+                this.changeGrid()
+            }
+
         }
         else if (e.keyCode == '38') {
             console.log('up');
-            var OParray = this.state.outputArray;
-            var change = this.state.i - 1
-            OParray.push([change, this.state.j])
-            this.setState({ outputArray: OParray })
-            this.setState({ i: change })
-            this.changeGrid()
+            if (i - 1 >= 0) {
+                var OParray = this.state.outputArray;
+                var change = this.state.i - 1
+                OParray.push([change, this.state.j])
+                this.setState({ outputArray: OParray, i: change, stepsCount: stepsCount + 1 })
+                // this.setState({ i: change })
+                this.changeGrid()
+            }
+
         }
         else if (e.keyCode == '39') {
-            console.log('right');
-            var OParray = this.state.outputArray;
-            var change = this.state.j + 1
-            OParray.push([this.state.i, change])
-            this.setState({ outputArray: OParray })
-            this.setState({ j: change })
-            this.changeGrid()
+            if (j + 1 < n) {
+                console.log('right');
+                var OParray = this.state.outputArray;
+                var change = this.state.j + 1
+                OParray.push([this.state.i, change])
+                this.setState({ outputArray: OParray, j: change, stepsCount: stepsCount + 1 })
+                // this.setState({ j: change })
+                this.changeGrid()
+            }
+
         }
         else if (e.keyCode == '40') {
-            console.log('down');
-            var OParray = this.state.outputArray;
-            var change = this.state.i + 1
-            OParray.push([change, this.state.j])
-            this.setState({ outputArray: OParray })
-            this.setState({ i: change })
-            this.changeGrid()
+            if (i + 1 < n) {
+                console.log('down');
+                var OParray = this.state.outputArray;
+                var change = this.state.i + 1
+                OParray.push([change, this.state.j])
+                this.setState({ outputArray: OParray, i: change, stepsCount: stepsCount + 1 })
+                // this.setState({ i: change })
+                this.changeGrid()
+            }
+
         }
     }
 
-    changeGrid = ()=> {
+    changeGrid = () => {
         var count = 0;
         var temp = [];
         var temp2 = [];
@@ -71,6 +87,7 @@ class Dashboard extends Component {
                     boxNumber: count,
                     selectedBox: (i === this.state.i && j === this.state.j) ? true : false
                 }
+
                 temp2.push(temp)
                 // console.log(temp)
             }
@@ -79,38 +96,45 @@ class Dashboard extends Component {
         this.setState({ arrayObject: temp2 })
     }
 
-    handleChange(e) {
-        this.setState({ gridInput: e.target.value,outputArray: [] });
+    _NChange(e) {
+        this.setState({ gridInput: e.target.value, outputArray: [] });
+    }
+    _MChange(e) {
+        this.setState({ m: parseInt(e.target.value), outputArray: [] });
     }
 
-    _submit = () => {
-        this.setState({outputArray: [], i:0,j:0, n: parseInt(this.state.gridInput),  })
-        this.changeGrid()
+    _submit = async () => {
+        await this.setState({ outputArray: [], i: 0, j: 0, n: parseInt(this.state.gridInput), })
+        await this.changeGrid()
     }
 
     render() {
         return (
             <div className='main'>
                 <div className='formContainer'>
-                    <div>
-                        <text>grid (n): </text>
+                    <div className='innerContainer' >
+                        <text>grid (n):&nbsp;&nbsp;</text>
                         <input
                             type="number"
                             value={this.state.gridInput}
-                            onChange={this.handleChange} />
+                            onChange={this._NChange} />
                     </div>
                     <div>
                         <text>No. of steps (m): </text>
                         <input
                             type="number"
-                            value={this.state.numberOfGuests}
-                        // onChange={this.handleInputChange}
+                            value={this.state.m}
+                            onChange={this._MChange}
                         />
-                    </div>
-                    <button onClick={this._submit}>Submit</button>
-                </div>
 
+                    </div>
+                    <button onClick={this._submit} className='submitBtn'>Submit</button>
+                </div>
+                <text style={{ marginTop: '3rem' }}> &nbsp;{this.state.n + " X " + this.state.n}</text>
+                <text  > &nbsp;{"No. of Steps: " + this.state.stepsCount}</text>
+                <text style={{ fontSize: 12 }}>Block Traversed: {JSON.stringify(this.state.outputArray)}</text>
                 <table className='tableGrid'>
+
                     <tbody>
                         {[...Array(this.state.n + 1)].map((data, index) =>
                             <div style={{ display: 'flex', flexDirection: 'row' }} key={index}>
@@ -130,8 +154,16 @@ class Dashboard extends Component {
                         )}
                     </tbody>
                 </table>
-                <text>OUTPUT: {JSON.stringify(this.state.outputArray)}</text>
 
+                {this.state.m === this.state.stepsCount
+                    ?
+                    (
+                        window.removeEventListener('keydown', this.checkKey),
+                        <text>OUTPUT: {JSON.stringify(this.state.outputArray)}</text>)
+                    :
+                    null
+                }
+                {/* <text>OUTPUT: {JSON.stringify(this.state.outputArray)}</text> */}
             </div>
         )
     }
