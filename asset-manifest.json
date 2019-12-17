@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/roam-chessboard/static/css/main.f00d3860.chunk.css",
-    "main.js": "/roam-chessboard/static/js/main.68e2b9ea.chunk.js",
-    "main.js.map": "/roam-chessboard/static/js/main.68e2b9ea.chunk.js.map",
+    "main.js": "/roam-chessboard/static/js/main.629c2f8c.chunk.js",
+    "main.js.map": "/roam-chessboard/static/js/main.629c2f8c.chunk.js.map",
     "runtime-main.js": "/roam-chessboard/static/js/runtime-main.dac8257a.js",
     "runtime-main.js.map": "/roam-chessboard/static/js/runtime-main.dac8257a.js.map",
-    "static/js/2.e92040c7.chunk.js": "/roam-chessboard/static/js/2.e92040c7.chunk.js",
-    "static/js/2.e92040c7.chunk.js.map": "/roam-chessboard/static/js/2.e92040c7.chunk.js.map",
+    "static/js/2.2647f81d.chunk.js": "/roam-chessboard/static/js/2.2647f81d.chunk.js",
+    "static/js/2.2647f81d.chunk.js.map": "/roam-chessboard/static/js/2.2647f81d.chunk.js.map",
     "index.html": "/roam-chessboard/index.html",
-    "precache-manifest.cbd3f07613c15431763e59c2ca1f3a12.js": "/roam-chessboard/precache-manifest.cbd3f07613c15431763e59c2ca1f3a12.js",
+    "precache-manifest.8f2730022cb7205a5eb1c2f5fbc033de.js": "/roam-chessboard/precache-manifest.8f2730022cb7205a5eb1c2f5fbc033de.js",
     "service-worker.js": "/roam-chessboard/service-worker.js",
     "static/css/main.f00d3860.chunk.css.map": "/roam-chessboard/static/css/main.f00d3860.chunk.css.map",
-    "static/js/2.e92040c7.chunk.js.LICENSE": "/roam-chessboard/static/js/2.e92040c7.chunk.js.LICENSE",
+    "static/js/2.2647f81d.chunk.js.LICENSE": "/roam-chessboard/static/js/2.2647f81d.chunk.js.LICENSE",
     "static/media/logo.svg": "/roam-chessboard/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.dac8257a.js",
-    "static/js/2.e92040c7.chunk.js",
+    "static/js/2.2647f81d.chunk.js",
     "static/css/main.f00d3860.chunk.css",
-    "static/js/main.68e2b9ea.chunk.js"
+    "static/js/main.629c2f8c.chunk.js"
   ]
 }
