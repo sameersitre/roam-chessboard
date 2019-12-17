@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/roam-chessboard/static/css/main.7a427453.chunk.css",
+    "main.js": "/roam-chessboard/static/js/main.f626bbf5.chunk.js",
+    "main.js.map": "/roam-chessboard/static/js/main.f626bbf5.chunk.js.map",
+    "runtime-main.js": "/roam-chessboard/static/js/runtime-main.dac8257a.js",
+    "runtime-main.js.map": "/roam-chessboard/static/js/runtime-main.dac8257a.js.map",
+    "static/js/2.029493da.chunk.js": "/roam-chessboard/static/js/2.029493da.chunk.js",
+    "static/js/2.029493da.chunk.js.map": "/roam-chessboard/static/js/2.029493da.chunk.js.map",
+    "index.html": "/roam-chessboard/index.html",
+    "precache-manifest.f05a58c71e2b71efe171e1027d408f61.js": "/roam-chessboard/precache-manifest.f05a58c71e2b71efe171e1027d408f61.js",
+    "service-worker.js": "/roam-chessboard/service-worker.js",
+    "static/css/main.7a427453.chunk.css.map": "/roam-chessboard/static/css/main.7a427453.chunk.css.map",
+    "static/js/2.029493da.chunk.js.LICENSE": "/roam-chessboard/static/js/2.029493da.chunk.js.LICENSE",
+    "static/media/logo.svg": "/roam-chessboard/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dac8257a.js",
+    "static/js/2.029493da.chunk.js",
+    "static/css/main.7a427453.chunk.css",
+    "static/js/main.f626bbf5.chunk.js"
+  ]
+}
